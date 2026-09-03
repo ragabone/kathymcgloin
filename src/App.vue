@@ -32,7 +32,7 @@ const stockists = [
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">A novel by Kathy McGloin</p>
+        <p class="eyebrow">Kathy McGloin’s debut novel</p>
         <h1 id="hero-title">Second Chances<br /><em>by the Sea</em></h1>
         <p class="tagline">Sometimes the place you escape to becomes the place you finally belong.</p>
         <a class="button" href="#book">Discover the story <span aria-hidden="true">↓</span></a>
@@ -68,7 +68,7 @@ const stockists = [
       <img class="author-photo" :src="authorProfile" alt="Kathy McGloin" />
       <div>
         <div class="section-label">The author</div>
-        <h2 id="author-title">Kathy McGloin</h2>
+        <h2 id="author-title" class="author-name">Kathy McGloin</h2>
         <p class="lead">Kathy McGloin grew up in Belfast during the Troubles of the 1970s, ’80s and ’90s, spending her childhood summers caravanning in the idyllic seaside town of Bundoran, on the west coast of Ireland — a place that became a sanctuary for her family and has remained close to her heart ever since.</p>
         <p class="muted">Inspired by those memories of the Donegal coast, <em>Second Chances by the Sea</em> is her debut novel — a heartfelt story about healing, hope, and finding home in unexpected places.</p>
         <p class="muted">Kathy now lives in Bundoran with her husband, James, whose constant love and encouragement supported her throughout her writing journey. Her twin sons, Michael and Oisín, who are currently studying abroad, have also been among her biggest supporters. The Atlantic Ocean continues to inspire her every single day.</p>
