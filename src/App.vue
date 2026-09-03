@@ -1,11 +1,20 @@
 <script setup>
 import frontCover from './assets/Front Cover.png'
+import authorProfile from './assets/author_profile.jpg'
 
 const navigation = [
   { label: 'The Book', href: '#book' },
   { label: 'Launch', href: '#launch' },
   { label: 'Author', href: '#author' },
   { label: 'Where to Buy', href: '#buy' },
+]
+
+const stockists = [
+  { name: 'Liber Bookshop', location: 'Sligo, County Sligo', website: 'https://liber.ie/' },
+  { name: 'The Wishing Chair', location: 'Bundoran, County Donegal' },
+  { name: 'The American House', location: 'Bundoran, County Donegal' },
+  { name: 'A Novel Idea Bookshop', location: 'Ballyshannon, County Donegal' },
+  { name: 'Four Masters Bookshop', location: 'Donegal Town, County Donegal' },
 ]
 </script>
 
@@ -38,7 +47,7 @@ const navigation = [
       <div>
         <h2 id="book-title">A new shore. A fresh start.</h2>
         <p class="lead">After a devastating betrayal shatters the life she thought she was building in Belfast, Erin escapes to the seaside town of Bundoran on Ireland’s west coast, hoping only for a fresh start and a little peace.</p>
-        <p class="muted">Further synopsis text, genre, and themes will be added here.</p>
+        <p class="muted"><strong>Genre:</strong> Romantic fiction, set between Belfast and Ireland’s west coast.</p>
       </div>
     </section>
 
@@ -56,12 +65,13 @@ const navigation = [
     </section>
 
     <section id="author" class="section author-section" aria-labelledby="author-title">
-      <div class="portrait-placeholder" role="img" aria-label="Author photograph placeholder">Author photo<br />to be added</div>
+      <img class="author-photo" :src="authorProfile" alt="Kathy McGloin" />
       <div>
         <div class="section-label">The author</div>
         <h2 id="author-title">Kathy McGloin</h2>
-        <p class="lead">Author biography to be supplied.</p>
-        <p class="muted">This space is ready for a short biography, author photograph, and any relevant links or news.</p>
+        <p class="lead">Kathy McGloin grew up in Belfast during the Troubles of the 1970s, ’80s and ’90s, spending her childhood summers caravanning in the idyllic seaside town of Bundoran, on the west coast of Ireland — a place that became a sanctuary for her family and has remained close to her heart ever since.</p>
+        <p class="muted">Inspired by those memories of the Donegal coast, <em>Second Chances by the Sea</em> is her debut novel — a heartfelt story about healing, hope, and finding home in unexpected places.</p>
+        <p class="muted">Kathy now lives in Bundoran with her husband, James, whose constant love and encouragement supported her throughout her writing journey. Her twin sons, Michael and Oisín, who are currently studying abroad, have also been among her biggest supporters. The Atlantic Ocean continues to inspire her every single day.</p>
       </div>
     </section>
 
@@ -71,28 +81,36 @@ const navigation = [
         <h2 id="setting-title">At the edge of the Atlantic</h2>
         <p>Bundoran, on Ireland’s west coast, and its striking Fairy Bridges form an important part of the novel’s coastal atmosphere.</p>
       </div>
-      <div class="coast-art" role="img" aria-label="Coastal artwork placeholder for Bundoran and the Fairy Bridges">
-        <span>Bundoran &amp; the Fairy Bridges</span>
-        <small>Coastal artwork to be added</small>
-      </div>
+      <figure class="setting-image">
+        <img src="https://cdn.shopify.com/s/files/1/0274/3963/files/image-1300x1000_480x480.png" alt="The Fairy Bridges on the Bundoran coast" />
+        <figcaption>Bundoran &amp; the Fairy Bridges</figcaption>
+      </figure>
     </section>
 
     <section id="buy" class="section buy-section" aria-labelledby="buy-title">
       <div class="section-label">Find your copy</div>
       <div>
         <h2 id="buy-title">Where to buy</h2>
-        <p class="lead">Purchase details will be announced soon.</p>
-        <div class="buy-options">
-          <div><strong>Local retailers</strong><span>Details to be added</span></div>
-          <div><strong>Direct purchase</strong><span>Details to be added</span></div>
-          <div><strong>Online bookshops</strong><span>Links to be added</span></div>
+        <p class="lead">Available locally from these independent stockists.</p>
+        <div class="stockists">
+          <article v-for="stockist in stockists" :key="stockist.name" class="stockist">
+            <h3>{{ stockist.name }}</h3>
+            <p>{{ stockist.location }}</p>
+            <a v-if="stockist.website" :href="stockist.website" target="_blank" rel="noreferrer">Visit shop website <span aria-hidden="true">↗</span></a>
+            <span v-else>In-store stockist</span>
+          </article>
         </div>
+        <p class="purchase-note">Please contact the individual shop to check current stock availability.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <p><strong>Second Chances by the Sea</strong> &mdash; Kathy McGloin</p>
-    <p>Contact and social links to be added.</p>
+    <div class="footer-links" aria-label="Contact and social links">
+      <a href="mailto:kmcgloin31@gmail.com">Email Kathy</a>
+      <a href="https://www.instagram.com/kathy._54321?utm_source=qr&amp;igsi=bmhtMXkzYXY3eTVp" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+      <a href="https://www.facebook.com/share/19GE6iTKLP/" target="_blank" rel="noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+    </div>
   </footer>
 </template>
