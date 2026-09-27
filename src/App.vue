@@ -4,7 +4,6 @@ import authorProfile from "./assets/author_profile.jpg";
 
 const navigation = [
 	{ label: "The Book", href: "#book" },
-	{ label: "Launch", href: "#launch" },
 	{ label: "Author", href: "#author" },
 	{ label: "Where to Buy", href: "#buy" },
 ];
@@ -20,6 +19,7 @@ const stockists = [
 	{ name: "A Novel Idea Bookshop", location: "Ballyshannon, County Donegal" },
 	{ name: "Four Masters Bookshop", location: "Donegal Town, County Donegal" },
 ];
+
 </script>
 
 <template>
@@ -43,8 +43,8 @@ const stockists = [
 				<p class="tagline">
 					Sometimes the tide brings you back to where you belong.
 				</p>
-				<a class="button" href="#book"
-					>Discover the story <span aria-hidden="true">↓</span></a
+				<a class="button" href="#buy"
+					>Find your copy <span aria-hidden="true">↓</span></a
 				>
 			</div>
 			<div class="cover-wrap">
@@ -74,24 +74,6 @@ const stockists = [
 					<strong>Genre:</strong> Romantic fiction, set between Belfast and
 					Ireland’s west coast.
 				</p>
-			</div>
-		</section>
-
-		<section id="launch" class="launch-section" aria-labelledby="launch-title">
-			<div class="launch-intro">
-				<p class="eyebrow">You’re invited</p>
-				<h2 id="launch-title">Book launch</h2>
-				<p>
-					Join Kathy McGloin to celebrate <em>Second Chances by the Sea</em>.
-				</p>
-			</div>
-			<div class="launch-details">
-				<p class="date">Wednesday<br /><strong>September 9, 2026</strong></p>
-				<p>
-					<strong>18:30</strong><br />Marc Geagan Suite<br />Bundoran Community
-					Centre<br />Bundoran, County Donegal
-				</p>
-				<p class="refreshments">Refreshments served</p>
 			</div>
 		</section>
 
@@ -148,7 +130,20 @@ const stockists = [
 			<div class="section-label">Find your copy</div>
 			<div>
 				<h2 id="buy-title">Where to buy</h2>
-				<p class="lead">Available locally from these independent stockists.</p>
+				<section class="direct-order" aria-labelledby="direct-order-title">
+					<div>
+						<p class="eyebrow">Order direct</p>
+						<h3 id="direct-order-title">Signed paperback</h3>
+						<p class="direct-price">€16.00</p>
+						<p>Each copy is signed by Kathy McGloin and dispatched weekly. Postage is calculated at secure checkout, based on the delivery address.</p>
+					</div>
+					<div class="direct-order-action">
+						<a class="button" href="https://buy.stripe.com/00w9AS5NSdM97lF8Bw83C00">Buy signed copy <span aria-hidden="true">↗</span></a>
+						<p>Secure checkout is provided by Stripe.</p>
+					</div>
+				</section>
+
+				<p class="lead local-stockists-title">Also available locally from these independent stockists.</p>
 				<div class="stockists">
 					<article
 						v-for="stockist in stockists"
