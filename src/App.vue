@@ -5,6 +5,7 @@ import authorProfile from "./assets/author_profile.jpg";
 const navigation = [
 	{ label: "The Book", href: "#book" },
 	{ label: "Author", href: "#author" },
+	{ label: "Bulk Enquiries", href: "#enquiries" },
 	{ label: "Where to Buy", href: "#buy" },
 ];
 
@@ -124,6 +125,55 @@ const stockists = [
 				/>
 				<figcaption>Bundoran &amp; the Fairy Bridges</figcaption>
 			</figure>
+		</section>
+
+		<section id="enquiries" class="section enquiries-section" aria-labelledby="enquiries-title">
+			<div>
+				<div class="section-label">Book clubs &amp; bulk buyers</div>
+				<h2 id="enquiries-title">Start a conversation</h2>
+				<p class="lead">For book clubs, distributors, retailers, and other larger-order enquiries, Kathy would be delighted to hear from you.</p>
+			</div>
+			<form class="enquiry-form" action="https://formspree.io/f/xrpeppge" method="POST">
+				<input type="hidden" name="_subject" value="New Second Chances by the Sea enquiry" />
+				<div class="form-field">
+					<label for="enquiry-name">Your name</label>
+					<input id="enquiry-name" name="name" type="text" autocomplete="name" required />
+				</div>
+				<div class="form-field">
+					<label for="enquiry-organisation">Organisation or book club</label>
+					<input id="enquiry-organisation" name="organisation" type="text" autocomplete="organization" />
+				</div>
+				<div class="form-field">
+					<label for="enquiry-type">Enquiry type</label>
+					<select id="enquiry-type" name="enquiry_type" required>
+						<option value="" disabled selected>Please select</option>
+						<option>Book club</option>
+						<option>Distributor</option>
+						<option>Retailer</option>
+						<option>Other bulk order</option>
+					</select>
+				</div>
+				<div class="form-field">
+					<label for="enquiry-email">Email address</label>
+					<input id="enquiry-email" name="email" type="email" autocomplete="email" required />
+				</div>
+				<div class="form-field form-field-full">
+					<label for="enquiry-location">Location</label>
+					<input id="enquiry-location" name="location" type="text" autocomplete="address-level1" />
+				</div>
+				<div class="form-field form-field-full">
+					<label for="enquiry-quantity">Estimated quantity <span>(optional)</span></label>
+					<input id="enquiry-quantity" name="estimated_quantity" type="number" min="1" inputmode="numeric" />
+				</div>
+				<div class="form-field form-field-full">
+					<label for="enquiry-message">Your message</label>
+					<textarea id="enquiry-message" name="message" rows="5" required></textarea>
+				</div>
+				<div class="form-field-full form-submit">
+					<button class="button" type="submit">Send enquiry <span aria-hidden="true">→</span></button>
+					<p>Your details will be used only to respond to your enquiry.</p>
+				</div>
+			</form>
 		</section>
 
 		<section id="buy" class="section buy-section" aria-labelledby="buy-title">
